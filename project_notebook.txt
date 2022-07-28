@@ -1,0 +1,38 @@
+DD / Rich lab collaboration
+
+7/8/2022
+
+Hypothesis 
+is that MDS2 controls a metabolite pathway in glioblastoma stem cells.
+
+DATA
+Data is metabolite abundances across cell samples. 
+Samples:
+	4 replicates of 2 cell lines at 2 different time points: 
+		differentiated glioma cells (DGCs) and glioblastoma stem cells (GSCs),
+		lines 383 and 3565
+
+RESULTS
+PCA - done. 
+ as expected, GSCs from the two lines are more similar than DGCs from the same 2 lines.
+ II_D04_383_DGC_4 is an outlier in PCs 1 and especially 2.
+
+Clustermap - done. 
+ Most metabolites differential between the two cell types.
+ II_D04_383_DGC_4 is an outlier.
+ Log2 transform > quantile normalize > standardize > PCA
+												   > hierarchical clustering
+ Hierarchical clustering best parameterization:
+  best: average distance, cosine distance.
+  NB: after standardization, cosine = correlation distance
+  also tried clustering without quantile normalization; standardize;
+
+DISCUSSION
+PC1 - cell type
+PC2 - sequencing quality? cell line?
+
+Todo:
+	log-log plot of metabolite abundance against some other measure, don't think we have it.
+	 Would need to follow up with the Rich team
+	Let Jill and Lukas know.
+387_DGC, 3565_DGC, 387_GSC, 3565_GSC
